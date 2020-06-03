@@ -1,0 +1,19 @@
+<!doctype html>
+<title>Clasificador</title>
+<h2>Gato o perro</h2>
+{% if filename %}
+	<div>
+		<img src="{{ url_for('display_image', filename=filename) }}">
+		<p> {{ proba }}% de ser gato </p>
+	</div>
+{% endif %}
+<form method="post" action="/" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<input type="file" name="file" autocomplete="off" required>
+		</p>
+    </dl>
+    <p>
+		<input type="submit" value="Submit">
+	</p>
+</form>
